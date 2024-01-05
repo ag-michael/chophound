@@ -38,7 +38,7 @@ def main(args):
         endoflist = False
         i = 0
         while True:
-            outfile = '%s_%.4d.json' % (basename, i)
+            outfile = '%s_%.6d.json' % (basename, i)
 
             # Get chunk
             chunks = []
@@ -73,7 +73,7 @@ def getargs():
     )
     parser.add_argument('file', help='JSON file to split')
     parser.add_argument('-c', '--chunksize', default=10000, type=int, dest='chunksize', help='Number of items per outputted chunk')
-    parser.add_argument('-v', '--verbose', action=argparse.BooleanOptionalAction, help='Show verbose output')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Show verbose output')
 
     return parser.parse_args()
 
